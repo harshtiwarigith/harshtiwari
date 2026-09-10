@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="TARS is a space science desk for ISRO, NASA, and ISS questions.">
+  <title>TARS | Space Science Desk</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="shell">
+    <header class="topbar">
+      <a class="brand" href="#top" aria-label="TARS home"><span class="brand-mark">T</span><span>TARS</span></a>
+      <div class="topbar-meta"><span class="signal-dot"></span><span>LOCAL KNOWLEDGE MODE</span><span class="date">10 SEP 2026</span></div>
+    </header>
+
+    <main id="top" class="workspace">
+      <section class="intro" aria-labelledby="page-title">
+        <p class="kicker">SPACE SCIENCE DESK / 01</p>
+        <h1 id="page-title">Ask the orbit.<br><em>Understand the mission.</em></h1>
+        <p class="intro-copy">A focused research companion for ISRO, NASA, the International Space Station, and the engineering that keeps humanity moving beyond Earth.</p>
+        <div class="topic-row" aria-label="Topics">
+          <span>ISRO</span><span>NASA</span><span>ISS</span><span>ORBITAL MECHANICS</span>
+        </div>
+      </section>
+
+      <section class="chat-panel" aria-label="TARS conversation">
+        <div class="panel-head">
+          <div><span class="eyebrow">ACTIVE SESSION</span><strong>TARS / GENERAL SPACE DESK</strong></div>
+          <button class="clear-button" id="clearChat" type="button" title="Clear conversation">CLEAR <span>↗</span></button>
+        </div>
+        <div class="messages" id="messages" aria-live="polite">
+          <article class="message tars-message">
+            <div class="avatar">T</div>
+            <div class="message-body"><div class="message-label">TARS <time>NOW</time></div><p>Welcome aboard. Ask me about a mission, a spacecraft, an astronaut, or the physics behind an orbit.</p></div>
+          </article>
+          <div class="quick-prompts" id="quickPrompts">
+            <button type="button" data-question="How does the ISS maintain its orbit?">ISS orbit control <span>↗</span></button>
+            <button type="button" data-question="Compare ISRO and NASA launch vehicles.">ISRO vs NASA <span>↗</span></button>
+            <button type="button" data-question="What is a geostationary orbit?">Geostationary orbit <span>↗</span></button>
+          </div>
+        </div>
+        <form class="composer" id="chatForm">
+          <label class="sr-only" for="question">Ask TARS a question</label>
+          <input id="question" name="question" autocomplete="off" placeholder="Ask about a mission, orbit, or spacecraft...">
+          <button type="submit" aria-label="Send question" title="Send question">SEND <span>↗</span></button>
+        </form>
+      </section>
+
+      <aside class="side-note">
+        <div class="orbit-line"><span></span></div>
+        <p class="eyebrow">FIELD NOTE 004</p>
+        <p>Space is not empty. Even low Earth orbit has enough atmosphere to slow a station down over time.</p>
+        <a href="https://www.nasa.gov/international-space-station/" target="_blank" rel="noreferrer">NASA / ISS PORTAL <span>↗</span></a>
+      </aside>
+    </main>
+    <footer><span>TARS SPACE SCIENCE DESK</span><span>BUILT FOR CURIOUS MINDS</span></footer>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

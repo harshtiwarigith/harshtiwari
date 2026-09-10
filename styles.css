@@ -1,0 +1,66 @@
+:root {
+  --ink: #17231f;
+  --muted: #6d7771;
+  --paper: #f3f0e8;
+  --panel: #fbfaf5;
+  --lime: #c8f36b;
+  --orange: #e26f41;
+  --line: #d8d8ca;
+  --mono: "DM Mono", monospace;
+  --sans: "Space Grotesk", sans-serif;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; color: var(--ink); background: var(--paper); font-family: var(--sans); }
+body::before { content: ""; position: fixed; inset: 0; pointer-events: none; opacity: .35; background-image: linear-gradient(rgba(23,35,31,.035) 1px, transparent 1px), linear-gradient(90deg, rgba(23,35,31,.035) 1px, transparent 1px); background-size: 32px 32px; }
+.shell { position: relative; max-width: 1480px; min-height: 100vh; margin: 0 auto; padding: 0 5vw; }
+.topbar { display: flex; align-items: center; justify-content: space-between; padding: 28px 0; border-bottom: 1px solid var(--line); font: 500 11px var(--mono); letter-spacing: .07em; }
+.brand { display: inline-flex; align-items: center; gap: 11px; color: var(--ink); font-size: 17px; font-weight: 700; letter-spacing: .18em; text-decoration: none; }
+.brand-mark { display: grid; place-items: center; width: 30px; height: 30px; background: var(--ink); color: var(--lime); font-size: 15px; transform: rotate(-8deg); }
+.topbar-meta { display: flex; align-items: center; gap: 9px; color: var(--muted); }
+.signal-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--orange); box-shadow: 0 0 0 4px rgba(226,111,65,.13); }
+.date { margin-left: 22px; color: var(--ink); }
+.workspace { display: grid; grid-template-columns: minmax(280px, .78fr) minmax(480px, 1.4fr) minmax(180px, .42fr); gap: clamp(32px, 6vw, 100px); padding: 11vh 0 8vh; }
+.intro { align-self: start; animation: rise .7s ease both; }
+.kicker, .eyebrow { margin: 0 0 22px; color: var(--orange); font: 500 10px var(--mono); letter-spacing: .13em; }
+h1 { max-width: 510px; margin: 0; font-size: clamp(46px, 5.2vw, 82px); line-height: .98; letter-spacing: -.05em; font-weight: 600; }
+h1 em { color: var(--orange); font-style: normal; }
+.intro-copy { max-width: 385px; margin: 32px 0 34px; color: var(--muted); font-size: 15px; line-height: 1.65; }
+.topic-row { display: flex; flex-wrap: wrap; gap: 8px; max-width: 400px; }
+.topic-row span { padding: 8px 10px; border: 1px solid var(--line); color: var(--muted); font: 500 9px var(--mono); letter-spacing: .06em; }
+.chat-panel { display: flex; min-height: 610px; flex-direction: column; background: var(--panel); border: 1px solid var(--ink); box-shadow: 10px 10px 0 var(--lime); animation: rise .7s .1s ease both; }
+.panel-head { display: flex; align-items: center; justify-content: space-between; padding: 20px 24px; border-bottom: 1px solid var(--line); }
+.panel-head .eyebrow { display: block; margin-bottom: 7px; color: var(--muted); font-size: 9px; }
+.panel-head strong { font: 500 11px var(--mono); letter-spacing: .04em; }
+.clear-button { border: 0; background: transparent; color: var(--muted); cursor: pointer; font: 500 10px var(--mono); letter-spacing: .08em; }
+.clear-button:hover, .side-note a:hover { color: var(--orange); }
+.messages { flex: 1; padding: 30px 28px; }
+.message { display: flex; gap: 15px; max-width: 90%; margin-bottom: 30px; animation: rise .35s ease both; }
+.user-message { margin-left: auto; flex-direction: row-reverse; text-align: right; }
+.avatar { display: grid; flex: 0 0 30px; width: 30px; height: 30px; place-items: center; background: var(--ink); color: var(--lime); font: 500 13px var(--mono); }
+.user-message .avatar { background: var(--orange); color: var(--paper); }
+.message-label { margin: 2px 0 9px; color: var(--muted); font: 500 10px var(--mono); letter-spacing: .08em; }
+.message-label time { margin-left: 8px; color: #aeb3a9; }
+.message p { margin: 0; font-size: 15px; line-height: 1.65; }
+.user-message p { display: inline-block; padding: 12px 15px; background: var(--ink); color: var(--paper); text-align: left; }
+.quick-prompts { display: flex; flex-wrap: wrap; gap: 8px; margin: 46px 0 0 45px; }
+.quick-prompts button { padding: 11px 13px; border: 1px solid var(--line); background: transparent; color: var(--ink); cursor: pointer; font: 500 10px var(--mono); text-align: left; }
+.quick-prompts button:hover { border-color: var(--orange); color: var(--orange); }
+.quick-prompts span, .composer span, .side-note a span { color: var(--orange); }
+.composer { display: flex; gap: 12px; padding: 18px; border-top: 1px solid var(--line); }
+.composer input { min-width: 0; flex: 1; padding: 15px 6px; border: 0; outline: 0; background: transparent; color: var(--ink); font: 15px var(--sans); }
+.composer input::placeholder { color: #a4aaa0; }
+.composer button { padding: 0 15px; border: 0; background: var(--orange); color: white; cursor: pointer; font: 500 10px var(--mono); letter-spacing: .08em; }
+.composer button:hover { background: var(--ink); }
+.side-note { align-self: end; padding-bottom: 28px; animation: rise .7s .2s ease both; }
+.orbit-line { width: 100%; height: 1px; margin-bottom: 32px; background: var(--ink); transform: rotate(-13deg); transform-origin: left; }
+.orbit-line span { display: block; width: 9px; height: 9px; margin-top: -4px; margin-left: 55%; border-radius: 50%; background: var(--orange); }
+.side-note .eyebrow { margin-bottom: 14px; color: var(--muted); }
+.side-note p:not(.eyebrow) { max-width: 210px; color: var(--muted); font-size: 13px; line-height: 1.55; }
+.side-note a { display: inline-block; margin-top: 15px; color: var(--ink); font: 500 10px var(--mono); text-decoration: none; }
+footer { display: flex; justify-content: space-between; padding: 18px 0 28px; border-top: 1px solid var(--line); color: var(--muted); font: 10px var(--mono); letter-spacing: .08em; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+@keyframes rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+@media (max-width: 1050px) { .workspace { grid-template-columns: .8fr 1.4fr; gap: 45px; } .side-note { display: none; } }
+@media (max-width: 700px) { .shell { padding: 0 20px; } .topbar { padding: 20px 0; } .topbar-meta { font-size: 9px; } .date { display: none; } .workspace { display: block; padding: 65px 0 45px; } .intro { margin-bottom: 52px; } h1 { font-size: 51px; } .intro-copy { margin-top: 25px; } .chat-panel { min-height: 560px; box-shadow: 6px 6px 0 var(--lime); } .panel-head { padding: 17px; } .messages { padding: 24px 17px; } .message { max-width: 100%; } .quick-prompts { margin-left: 45px; } footer { font-size: 8px; } }
